@@ -1,0 +1,61 @@
+Résumé:
+    Le programme est une implémentation du jeu Puissance 4 en langage C. 
+    L'objectif est de nous permettre de jouer contre un ordinateur qui utilise l'algorithme MCTS-UCT
+    pour prendre ses décisions.
+
+    Au départ, on définit les paramètres du jeu, tels que la taille du plateau, le nombre de coups gagnants
+    et le temps alloué pour le calcul de chaque coup par l'ordinateur.
+
+    Ensuite, on définit des structures, tels que Etat et Coup, pour représenter l'état du jeu et 
+    les actions possibles. Par exemple, la structure Etat contient des informations sur le joueur actuel 
+    et l'état du jeu à un moment donné.
+
+    On implémente également diverses fonctions, telles que la copie d'un état de jeu, l'affichage du plateau de jeu, 
+    la saisie des coups de l'utilisateur, la vérification des coups possibles etc.
+
+    Le gros du programme est l'algorithme MCTS-UCT, qui est utilisé par l'ordinateur pour choisir ses coups. 
+    Cet algorithme simule plusieurs parties à partir de l'état actuel du jeu et choisit le meilleur coup possible.
+
+    Et on a le main où chaque partie du code est utilisé. Il initialise le plateau de jeu, 
+    nous demande qui commence, puis gère les tours de jeu jusqu'à ce qu'il y ai un vainqueur ou match nul. 
+
+    Pour conclure on a un programme qui nous permet de jouer contre un ordinateur qui utilise l'algorithme MCTS-UCT
+    pour jouer au puissance 4 (et nous battre à pleine coutûre) à l'aide d'implémentation de diverses fonctions.
+
+Question 2:
+    Au bout de 60 secondes on est sûr que l'ordinateur nous bat à tous les coups.
+
+Question 3:
+    Avec ces modifications, l'ordinateur va choisir le meilleur coup gagnant parmi les coups possibles 
+    quand c'est possible, sinon il prend un coup aléatoirement comme avant.
+    Quand c'est possible, ça améliore la probabilité de chance de gagner de l'ordinateur, 
+    car il est sûr de jouer le meilleur coup possible dans ses échantillons.
+    Donc l'algorithme marche mieux avec l'ajout du code demandé dans la question.
+    En seulement quelques coups, l'ordinateur peut dire qu'il va gagner avec certitude, avec un temps
+    de calcul faible comparé à avant.
+
+Question 4:
+    L'option -O3 permet d'optimiser sur plusieurs points le code. Ces optimisations incluent l'optimisation du code, 
+    ce qui comprends les boucles ainsi que la mémoire, sans oublier de réduire le code.
+    On inclut dans tout ça par exemple l'inlining des fonctions, la vectorisation des boucles et 
+    utiliser des registres plus efficacement.
+    Le temps de compilation est donc un peu plus long, mais le temps d'excécution du programme est plus rapide.
+
+Question 5:
+    Le critère max permet de choisir les coups qui ont des statistiques très élevés sur des situations spécifiques
+    et donc risqués.
+
+    Le critère robuste permet de choisir les coups qui ont des statistiques élevés sur toutes les situations donc
+    plus fiables.
+
+    On arrive donc souvent à des coups différents car les deux stratégies sont très différentes, l'une risqué, 
+    l'autre plus fiable.
+
+    Vu la situation actuelle, c'est à dire un puissance 4 avec un pc lambda, la stratégie max prend moins de ressources
+    que la stratégie robuste qui calcule plus longtemps, sachant qu'on impose un temps où l'algorithme peut chercher 
+    des solutions. Donc la stratégie max est la solution à adopter dans ce cas là.
+
+Question 6:
+    En reprenant l'hypothèse d'un pc lambda, sachant que les possibilités au puissance 4 ne sont pas nombreuses,
+    On peut s'attendre à une estimation de quelques minutes pour le premier coup.
+    Cela reste malgré tout des estimations.
